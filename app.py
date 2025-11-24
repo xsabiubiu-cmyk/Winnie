@@ -1,25 +1,16 @@
+import pandas as pd
 import streamlit as st
-from streamlit_option_menu import option_menu
 
-st.title('Hello, Students!')
-st.write('This is your Python Programming course.')
+# Sample data
+data = {'Product': ['A', 'B', 'C'], 
+        'Sales': [1200, 850, 950], 
+        'Customers': [300, 400, 350]}
+df = pd.DataFrame(data)
 
-with st.sidebar:
-    selected=option_menu(
-        menu_title = "Menu",
-        options = ["Home", "About", "Contact"],
-        icons = ["1-circle-fill",
-                 "2-circle-fill",
-                 "3-circle-fill"],
-        menu_icon= "emoji-smile-fill",
-        default_index=0,
-    )
+# Show data with Streamlit elements
+st.dataframe(df)                # Interactive table
+st.data_editor(df)              # Editable table
+st.table(df)                    # Static table
 
-if selected == "Home":
-    st.title(f"Welcome to the {selected} page.")
-
-if selected == "About":
-    st.title(f"Welcome to the {selected} page.")
-
-if selected == "Contact":
-    st.title(f"Welcome to the {selected} page.")
+# Customize columns directly in the dataframe display
+st.dataframe(df.style.format({'Sales': '${:,.0f}', 'Customers': '{:,.0f}'}))
