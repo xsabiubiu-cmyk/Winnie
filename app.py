@@ -30,7 +30,7 @@ with tab1:
         st.write(f"{quarter}：{revenue}")
     df=pd.dataframe({
         "Quarter":["Q1","Q2","Q3","Q4"],
-        "Revenue(in M$)":[1.2,1.5,1.3,1.6]}
+        "Revenue(in M$)":[1.2,1.5,1.3,1.6]})
     st.bar_chart(df,height=200)
 with tab2:
     st.write("### Customer Insights")
