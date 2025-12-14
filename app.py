@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 
 # 1. Dashboard Title and Objective
 # TODO: Add title and description
