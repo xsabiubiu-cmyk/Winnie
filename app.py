@@ -2,8 +2,8 @@ import streamlit as st
 
 st.title("Basic Web Calculator")
 
-num1=st.number_input("Enter the first number:",value=0.0)
-num2=st.number_input("Enter the second number:",value=0.0)
+num1=st.number_input("Enter the first number:",value=0.0,format="%.1f")
+num2=st.number_input("Enter the second number:",value=0.0,format="%.1f")
 
 operation=st.selectbox("Choose operation",["Add","Subtract","Multiply","Division"])
 
