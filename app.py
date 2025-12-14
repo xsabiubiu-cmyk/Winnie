@@ -65,7 +65,7 @@ with st.expander("More Information"):
 st.subheader("Interactive Revenue Checker")
 quarters=["Q1 2024", "Q2 2024", "Q3 2024", "Q4 2024"]
 selected_quarters=st.selectbox("Selected a quarter:",quarters)
-st.write(f"Revenue for {selected_quarters}:{sales_data[selected_quarter]}")
+st.write(f"Revenue for {selected_quarters}:{sales_data[selected_quarters]}")
 
 # 7. Bonus
 # TODO: Add bar chart and motivational button
