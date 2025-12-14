@@ -17,7 +17,7 @@ with st.form(key="Feedback_form"):
         feedback=st.text_area("Enter your feedback:")
         submit_button=st.form_submit_button("Submit Feedback")
 
-def sumbmit_feedback():
+def submit_feedback():
         st.write("### Submitted Feedback")
         st.write(f"**Product:** {product_choice}")
         st.write(f"**Sales Range:** {sales_range}")
