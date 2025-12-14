@@ -13,7 +13,7 @@ with Q2:
     st.header("Q2"）
     st.write("$1.5M")
 with Q3:
-    st.header("Q2")
+    st.header("Q3")
     st.write("$1.3M")
     
 # TODO: Create tabs for Sales Data, Customer Insights, Market Trends
