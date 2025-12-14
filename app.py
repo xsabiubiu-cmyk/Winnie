@@ -43,7 +43,7 @@ with tab2:
     for feedback in customer_feedback:
         st.write(f"-{feedback}")
 with tab3:
-    st.write("###Market Trends")
+    st.write("### Market Trends")
     market_trends={
         "Eco-friendly products": "Increasing demand",
         "Online shopping": "Continued growth",
