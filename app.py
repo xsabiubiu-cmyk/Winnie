@@ -1,44 +1,26 @@
-# Step 1: Install Streamlit (run in terminal: pip install streamlit)
-
-# Step 2: Import Necessary Libraries
 import streamlit as st
-import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
 
-# Step 3: Generate Random Sales Data
-sales_data = np.random.rand(100) * 1000
+st.title("Business Sales Dashboard")
+st.write("Analyze monthly sales data interactively!")
 
-# Step 4: Create a DataFrame
-products = ['Product A', 'Product B', 'Product C', 'Product D', 'Product E']
-sales = np.random.rand(5) * 1000
-customers = np.random.randint(1, 100, size=5)
+months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+sales = np.random.randint(5000, 20000, size=12)
+expenses = np.random.randint(3000, 15000, size=12)
 
-df = pd.DataFrame({
-    'Product': products,
-    'Sales': sales,
-    'Customers': customers
+data=pd.DataFrame({
+    "Month":months,
+    "Sales":sales,
+    "Expenses":expenses
 })
 
-# Step 5: Visualize Sales Data
+st.sidebar.header("Filters")
+selected_months = st.sidebar.multiselect("Select Months", months, default=months)
+show_expenses = st.sidebar.checkbox("Show Expenses", value=True)
 
-# Display DataFrame using st.dataframe
-st.markdown("### Product Sales and Customer Data")
-st.dataframe(df)  # Interactive table with sorting and resizing
+filtered_data = data[data["Month"].isin(selected_months)]
 
-# Line Chart - Sales Over Time
-st.markdown("### Sales Over Time")
-st.line_chart(sales_data)
-
-# Area Chart - Cumulative Sales
-st.markdown("### Cumulative Sales")
-st.area_chart(sales_data)
-
-# Bar Chart - Sales by Product
-st.markdown("### Sales by Product")
-st.bar_chart(df[['Product', 'Sales']].set_index('Product'))
-
-# Scatter Chart - Customer Engagement by Product
-st.markdown("### Customer Engagement by Product")
-st.scatter_chart(df[['Product', 'Customers']].set_index('Product'))
-
-# Step 6: Run the Streamlit App (run in terminal: streamlit run app.py)
+st.subheader("Filtered Data")
+st.dataframe(filtered_data)
