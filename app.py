@@ -29,7 +29,7 @@ with tab1:
     }
     for quarter,revenue in sales_data.items():
         st.write(f"{quarter}：{revenue}")
-    df=pd.dataframe({
+    df=pd.DataFrame({
         "Quarter":["Q1","Q2","Q3","Q4"],
         "Revenue(in M$)":[1.2,1.5,1.3,1.6]})
     st.bar_chart(df,height=200)
