@@ -7,4 +7,4 @@ data = {'Product': ['A', 'B', 'C', 'D', 'E'],
 df = pd.DataFrame(data)
 
 st.write("### Sample Data")
-st.write(df)
+st.DataFrame(df)
