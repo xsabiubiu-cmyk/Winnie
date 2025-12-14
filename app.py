@@ -10,7 +10,7 @@ with Q1:
     st.header("Q1")
     st.write("$1.2M")
 with Q2:
-    st.header("Q2"）
+    st.header("Q2")
     st.write("$1.5M")
 with Q3:
     st.header("Q3")
