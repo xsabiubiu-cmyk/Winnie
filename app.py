@@ -62,6 +62,12 @@ with st.expander("More Information"):
 
 # 6. Interactivity
 # TODO: Add selectbox and slider for revenue adjustment
+st.subheader("Interactive Revenue Checker")
+quarters=["Q1 2024", "Q2 2024", "Q3 2024", "Q4 2024"]
+selected_quarters=st.selectbox("Selected a quarter:",quarters)
+st.write(f"Revenue for {selected_quarter}:{sales_data[selected_quarter]}")
 
 # 7. Bonus
 # TODO: Add bar chart and motivational button
+if st.button("Show Motivaation"):
+    st.success("Keep pushing for growth!")
