@@ -44,7 +44,7 @@ df = st.session_state.df
 
 tab1,tab2,tab3=st.tabs(["Data","Insight","Add Record"])
 with tab1:
-    st.write(df.info())
+    df.info()
     st.dataframe(df)
     
     categories=list(df["Category"].unique())
