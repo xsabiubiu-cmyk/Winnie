@@ -62,8 +62,8 @@ with tab1:
     st.dataframe(filtered_df)
 
     with st.expander("数据诊断区域"):
-        df.info(df)
-        df.describe(df)
+        df.info()
+        df.describe()
 
 with tab2:
     col1,col2,col3=st.columns(3)
